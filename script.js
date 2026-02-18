@@ -8,8 +8,8 @@ const RESPONSES = {
       <p><strong>Phase 4 – Project Initiation:</strong> First sprint or milestone is defined, communication cadence is agreed (weekly check-ins, monthly QBRs), and escalation paths are documented.</p>`,
     sources: ["Client Onboarding SOP · p.4–9", "Project Delivery Framework · p.12"]
   },
-  Ikeja: {
-    keywords: ["Ikeja", "Ikeja project", "ikeja project", "Ikeja migration", "ikeja migration"],
+  ikeja: {
+    keywords: ["ikeja", "ikeja project", "ikeja migration", "ikeja group"],
     answer: `<p>The <strong>Ikeja Group Infrastructure Migration</strong> was completed in Q3 2024 and stands as one of CBC EMEA's flagship case studies.</p>
       <p><strong>Challenge:</strong> Ikeja needed to migrate 14 legacy on-premise servers across 3 European sites to a hybrid Azure/AWS environment — with zero downtime tolerance due to 24/7 wind turbine monitoring systems.</p>
       <p><strong>CBC EMEA Approach:</strong> A phased lift-and-shift strategy was used over 12 weeks. A shadow environment was built in parallel, with a 2-week parallel-run validation before each site cutover.</p>
@@ -67,7 +67,7 @@ const RESPONSES = {
   },
   default: {
     answer: `<p>I found some relevant information across CBC EMEA's knowledge base, though I don't have a highly specific match for that query.</p>
-      <p>For best results, try asking about <strong>specific projects</strong> (e.g. Ikeja, client names), <strong>internal processes</strong> (onboarding, delivery, GDPR), <strong>team expertise</strong> (who knows Azure, cloud migrations), or <strong>policies and SLAs</strong>.</p>
+      <p>For best results, try asking about <strong>specific projects</strong> (e.g. Ikeja, etc...), <strong>internal processes</strong> (onboarding, delivery, GDPR), <strong>team expertise</strong> (who knows Azure, cloud migrations), or <strong>policies and SLAs</strong>.</p>
       <p>If this is a topic that should be in our knowledge base but isn't, you can flag it to the <strong>Knowledge Management team</strong> to get it added.</p>`,
     sources: ["CBC EMEA Knowledge Base · General Index"]
   }
@@ -75,10 +75,16 @@ const RESPONSES = {
 
 function matchResponse(text) {
   const lower = text.toLowerCase();
+  console.log('Searching for:', lower);
   for (const [key, data] of Object.entries(RESPONSES)) {
     if (key === 'default') continue;
-    if (data.keywords.some(k => lower.includes(k))) return data;
+    console.log('Checking', key, 'with keywords:', data.keywords);
+    if (data.keywords.some(k => lower.includes(k))) {
+      console.log('Matched:', key);
+      return data;
+    }
   }
+  console.log('No match found, returning default');
   return RESPONSES.default;
 }
 
@@ -214,9 +220,9 @@ function resetChat() {
           <span class="s-icon">👥</span>
           Who has cyber security expertise?
         </button>
-        <button class="suggestion-btn" onclick="sendQuestion('How did CBC EMEA handle the Nordex infrastructure migration project?')">
+        <button class="suggestion-btn" onclick="sendQuestion('How did CBC EMEA handle the Ikeja infrastructure migration project?')">
           <span class="s-icon">🏗️</span>
-          Tell me about the Nordex project
+          Tell me about the Ikeja project
         </button>
         <button class="suggestion-btn" onclick="sendQuestion('What are the key steps in our project delivery framework?')">
           <span class="s-icon">🚀</span>
