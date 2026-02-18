@@ -2,6 +2,12 @@
 
 A demo AI-powered knowledge assistant interface for CBC EMEA IT Services & Consulting.
 
+## 🔗 Repository
+
+**GitHub:** https://github.com/0xwumade/CBC-chat-bot
+
+**Live Demo:** https://0xwumade.github.io/CBC-chat-bot/
+
 ## Features
 
 - Interactive chat interface

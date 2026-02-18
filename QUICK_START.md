@@ -33,7 +33,7 @@ git commit -m "Initial commit"
 
 4. Connect and push (replace YOUR_USERNAME):
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/your-repo-name.git
+git remote add origin https://github.com/YOUR_USERNAME/CBC-chat-bot.git
 git branch -M main
 git push -u origin main
 ```
@@ -58,13 +58,13 @@ git push
 1. Go to your GitHub repository
 2. Settings → Pages
 3. Select "main" branch → Save
-4. Share the URL: `https://YOUR_USERNAME.github.io/your-repo-name/`
+4. Share the URL: `https://YOUR_USERNAME.github.io/CBC-chat-bot/`
 
 ### Option 2: Share Repository
 Others can clone your repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/YOUR_USERNAME/CBC-chat-bot.git
+cd CBC-chat-bot
 ```
 
 Then run locally using any method above.

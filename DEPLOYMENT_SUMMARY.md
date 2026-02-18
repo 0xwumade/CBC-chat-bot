@@ -44,14 +44,14 @@ Then open your browser to: **http://localhost:8000**
 
 1. **Create a new repository on GitHub:**
    - Go to https://github.com/new
-   - Name it: `cbc-emea-knowledge-assistant` (or your choice)
+   - Name it: `CBC-chat-bot`
    - Choose Public or Private
    - Do NOT initialize with README
    - Click "Create repository"
 
 2. **Push your code:**
    ```bash
-   git remote add origin https://github.com/YOUR_USERNAME/cbc-emea-knowledge-assistant.git
+   git remote add origin https://github.com/YOUR_USERNAME/CBC-chat-bot.git
    git push -u origin main
    ```
 
@@ -61,7 +61,7 @@ Then open your browser to: **http://localhost:8000**
 2. Click **Settings** → **Pages**
 3. Under "Source", select **main** branch
 4. Click **Save**
-5. Your site will be live at: `https://YOUR_USERNAME.github.io/cbc-emea-knowledge-assistant/`
+5. Your site will be live at: `https://YOUR_USERNAME.github.io/CBC-chat-bot/`
 
 ---
 
@@ -70,20 +70,20 @@ Then open your browser to: **http://localhost:8000**
 ### Method 1: GitHub Repository
 Share the repository URL:
 ```
-https://github.com/YOUR_USERNAME/cbc-emea-knowledge-assistant
+https://github.com/YOUR_USERNAME/CBC-chat-bot
 ```
 
 Others can clone it:
 ```bash
-git clone https://github.com/YOUR_USERNAME/cbc-emea-knowledge-assistant.git
-cd cbc-emea-knowledge-assistant
+git clone https://github.com/YOUR_USERNAME/CBC-chat-bot.git
+cd CBC-chat-bot
 python -m http.server 8000
 ```
 
 ### Method 2: GitHub Pages (Live Website)
 Share the live URL:
 ```
-https://YOUR_USERNAME.github.io/cbc-emea-knowledge-assistant/
+https://YOUR_USERNAME.github.io/CBC-chat-bot/
 ```
 
 ### Method 3: Download ZIP

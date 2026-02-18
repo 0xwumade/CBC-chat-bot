@@ -8,8 +8,8 @@ const RESPONSES = {
       <p><strong>Phase 4 – Project Initiation:</strong> First sprint or milestone is defined, communication cadence is agreed (weekly check-ins, monthly QBRs), and escalation paths are documented.</p>`,
     sources: ["Client Onboarding SOP · p.4–9", "Project Delivery Framework · p.12"]
   },
-  nordex: {
-    keywords: ["nordex", "ikeja", "nordex project", "ikeja project", "nordex migration", "ikeja migration"],
+  Ikeja: {
+    keywords: ["Ikeja", "Ikeja project", "ikeja project", "Ikeja migration", "ikeja migration"],
     answer: `<p>The <strong>Ikeja Group Infrastructure Migration</strong> was completed in Q3 2024 and stands as one of CBC EMEA's flagship case studies.</p>
       <p><strong>Challenge:</strong> Ikeja needed to migrate 14 legacy on-premise servers across 3 European sites to a hybrid Azure/AWS environment — with zero downtime tolerance due to 24/7 wind turbine monitoring systems.</p>
       <p><strong>CBC EMEA Approach:</strong> A phased lift-and-shift strategy was used over 12 weeks. A shadow environment was built in parallel, with a 2-week parallel-run validation before each site cutover.</p>

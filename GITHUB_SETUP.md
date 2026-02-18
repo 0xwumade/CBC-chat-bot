@@ -28,7 +28,7 @@ git commit -m "Initial commit: CBC EMEA Knowledge Assistant"
 ## Step 4: Create GitHub Repository
 
 1. Go to https://github.com/new
-2. Enter repository name: `cbc-emea-knowledge-assistant` (or your preferred name)
+2. Enter repository name: `CBC-chat-bot` (or your preferred name)
 3. Choose Public or Private
 4. Do NOT initialize with README (we already have one)
 5. Click "Create repository"
@@ -38,7 +38,7 @@ git commit -m "Initial commit: CBC EMEA Knowledge Assistant"
 Replace `YOUR_USERNAME` with your GitHub username:
 
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/cbc-emea-knowledge-assistant.git
+git remote add origin https://github.com/YOUR_USERNAME/CBC-chat-bot.git
 ```
 
 ## Step 6: Push to GitHub
