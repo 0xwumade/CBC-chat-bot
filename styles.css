@@ -224,6 +224,36 @@ main {
   margin-top: 2px;
 }
 
+.home-btn {
+  background: var(--brand-light);
+  color: var(--brand);
+  border: 1px solid var(--brand);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .2s;
+}
+
+.home-btn:hover {
+  background: var(--brand);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,82,204,.2);
+}
+
+.home-btn:active {
+  transform: translateY(0);
+}
+
+.home-btn span {
+  font-size: 16px;
+}
+
 .model-badge {
   background: var(--brand-light);
   color: var(--brand);

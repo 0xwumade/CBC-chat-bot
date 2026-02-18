@@ -9,18 +9,18 @@ const RESPONSES = {
     sources: ["Client Onboarding SOP · p.4–9", "Project Delivery Framework · p.12"]
   },
   nordex: {
-    keywords: ["nordex", "nordex project", "nordex migration"],
-    answer: `<p>The <strong>Nordex Group Infrastructure Migration</strong> was completed in Q3 2024 and stands as one of CBC EMEA's flagship case studies.</p>
-      <p><strong>Challenge:</strong> Nordex needed to migrate 14 legacy on-premise servers across 3 European sites to a hybrid Azure/AWS environment — with zero downtime tolerance due to 24/7 wind turbine monitoring systems.</p>
+    keywords: ["nordex", "ikeja", "nordex project", "ikeja project", "nordex migration", "ikeja migration"],
+    answer: `<p>The <strong>Ikeja Group Infrastructure Migration</strong> was completed in Q3 2024 and stands as one of CBC EMEA's flagship case studies.</p>
+      <p><strong>Challenge:</strong> Ikeja needed to migrate 14 legacy on-premise servers across 3 European sites to a hybrid Azure/AWS environment — with zero downtime tolerance due to 24/7 wind turbine monitoring systems.</p>
       <p><strong>CBC EMEA Approach:</strong> A phased lift-and-shift strategy was used over 12 weeks. A shadow environment was built in parallel, with a 2-week parallel-run validation before each site cutover.</p>
-      <p><strong>Team:</strong> Led by <strong>Senior Consultant Daniel Mwangi</strong> (Cloud Architecture) with support from <strong>Anna Kowalski</strong> (Security) and a 4-person delivery team.</p>
+      <p><strong>Team:</strong> Led by <strong>Madam Patricia</strong> (CBC Gedu General Manager) with support from <strong>Mr Muhidin</strong> (Cyber Security Expert) and a 4-person delivery team.</p>
       <p><strong>Outcome:</strong> Migration completed 6 days ahead of schedule. 99.97% uptime maintained throughout. Client reported a 34% reduction in infrastructure costs post-migration.</p>`,
-    sources: ["Nordex Group Case Study · Full Report", "Infrastructure Migration Guide · p.22–31"]
+    sources: ["Ikeja Group Case Study · Full Report", "Infrastructure Migration Guide · p.22–31"]
   },
   cloud: {
     keywords: ["cloud", "azure", "aws", "migration experience", "who has experience", "cloud expertise", "cloud migration"],
     answer: `<p>Based on the <strong>CBC EMEA Staff Skills Matrix</strong>, the following consultants have certified cloud migration experience:</p>
-      <p><strong>Daniel Mwangi</strong> — Senior Cloud Architect. Azure Solutions Architect Expert certified. Led 6 enterprise migrations in the past 2 years including Nordex Group. Available from March 2025.</p>
+      <p><strong>Daniel Mwangi</strong> — Senior Cloud Architect. Azure Solutions Architect Expert certified. Led 6 enterprise migrations in the past 2 years including Ikeja Group. Available from March 2025.</p>
       <p><strong>Priya Shankar</strong> — Cloud Infrastructure Consultant. AWS Certified Solutions Architect. Specialises in hybrid cloud environments and DevOps pipelines. Currently on a client engagement until end of February.</p>
       <p><strong>James Okafor</strong> — Mid-level Cloud Engineer. Azure & GCP experience. Supported 4 migrations as part of larger teams. Good fit for smaller-scale projects.</p>
       <p>For capacity planning or to assign resources to a project, contact the <strong>Resource Management team</strong> via the internal portal.</p>`,
@@ -29,7 +29,7 @@ const RESPONSES = {
   cybersecurity: {
     keywords: ["cyber security", "cybersecurity", "security expert", "security experience", "infosec", "penetration testing", "security consultant"],
     answer: `<p>Based on the <strong>CBC EMEA Staff Skills Matrix</strong>, the following consultants have certified cyber security experience:</p>
-      <p><strong>Mr Muhidin</strong> — Senior Security Consultant. CISSP and CEH certified. Specialises in security audits, penetration testing, and compliance frameworks. Supported the Nordex Group migration with security architecture. Available from April 2025.</p>
+      <p><strong>Mr Muhidin</strong> — Senior Security Consultant. CISSP and CEH certified. Specialises in security audits, penetration testing, and compliance frameworks. Supported the Ikeja Group migration with security architecture. Available from April 2025.</p>
       <p><strong>Mr Jerry</strong> — Information Security Analyst. CompTIA Security+ and CISM certified. Focuses on threat detection, incident response, and security monitoring. Currently available for new engagements.</p>
       <p><strong>Mr Tobi</strong> — Security Operations Specialist. Experience with SIEM tools, vulnerability assessments, and security policy development. Good fit for ongoing security operations projects.</p>
       <p>For capacity planning or to assign resources to a project, contact the <strong>Resource Management team</strong> via the internal portal.</p>`,
@@ -67,7 +67,7 @@ const RESPONSES = {
   },
   default: {
     answer: `<p>I found some relevant information across CBC EMEA's knowledge base, though I don't have a highly specific match for that query.</p>
-      <p>For best results, try asking about <strong>specific projects</strong> (e.g. Nordex, client names), <strong>internal processes</strong> (onboarding, delivery, GDPR), <strong>team expertise</strong> (who knows Azure, cloud migrations), or <strong>policies and SLAs</strong>.</p>
+      <p>For best results, try asking about <strong>specific projects</strong> (e.g. Ikeja, client names), <strong>internal processes</strong> (onboarding, delivery, GDPR), <strong>team expertise</strong> (who knows Azure, cloud migrations), or <strong>policies and SLAs</strong>.</p>
       <p>If this is a topic that should be in our knowledge base but isn't, you can flag it to the <strong>Knowledge Management team</strong> to get it added.</p>`,
     sources: ["CBC EMEA Knowledge Base · General Index"]
   }
@@ -196,4 +196,35 @@ function handleKey(e) {
 function autoResize(el) {
   el.style.height = 'auto';
   el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
+function resetChat() {
+  const messagesContainer = document.getElementById('messages');
+  messagesContainer.innerHTML = `
+    <div class="welcome" id="welcome">
+      <div class="welcome-icon">🧠</div>
+      <h2>Welcome to CBC EMEA Knowledge Assistant</h2>
+      <p>Instantly search across all internal documents, past projects, SOPs, and team expertise. No more digging through folders or waiting for a colleague to reply.</p>
+      <div class="suggestions">
+        <button class="suggestion-btn" onclick="sendQuestion('What is the standard process for onboarding a new client at CBC EMEA?')">
+          <span class="s-icon">📋</span>
+          What is our client onboarding process?
+        </button>
+        <button class="suggestion-btn" onclick="sendQuestion('Who at CBC EMEA has experience with cyber security?')">
+          <span class="s-icon">👥</span>
+          Who has cyber security expertise?
+        </button>
+        <button class="suggestion-btn" onclick="sendQuestion('How did CBC EMEA handle the Nordex infrastructure migration project?')">
+          <span class="s-icon">🏗️</span>
+          Tell me about the Nordex project
+        </button>
+        <button class="suggestion-btn" onclick="sendQuestion('What are the key steps in our project delivery framework?')">
+          <span class="s-icon">🚀</span>
+          How does our delivery framework work?
+        </button>
+      </div>
+    </div>
+  `;
+  document.getElementById('input').value = '';
+  document.getElementById('sendBtn').disabled = false;
 }
