@@ -1,0 +1,177 @@
+Cbc emea demo · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CBC EMEA · Knowledge Assistant</title>
+  <link rel="stylesheet" href="styles.css"></head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <div class="logo-badge">CBC</div>
+    <div>
+      <div class="logo-text">CBC EMEA</div>
+      <div class="logo-sub">IT Services &amp; Consulting</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="status-pill">
+      <div class="status-dot"></div>
+      AI Assistant Online
+    </div>
+    <div class="avatar">JS</div>
+  </div>
+</header>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+  🚀 <strong>Demo Mode</strong> — Showing a preview of the CBC EMEA Internal Knowledge Assistant. All responses are powered by AI using simulated company data.
+</div>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Connected Sources</div>
+
+      <div class="doc-item">
+        <div class="doc-icon pdf">📄</div>
+        <div>
+          <div>Client Onboarding SOP</div>
+          <div class="doc-meta">Updated Jan 2025 · 24 pages</div>
+        </div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon word">📘</div>
+        <div>
+          <div>Project Delivery Framework</div>
+          <div class="doc-meta">Updated Dec 2024 · 38 pages</div>
+        </div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon pdf">📄</div>
+        <div>
+          <div>Infrastructure Migration Guide</div>
+          <div class="doc-meta">Updated Nov 2024 · 51 pages</div>
+        </div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon sheet">📗</div>
+        <div>
+          <div>Staff Skills Matrix</div>
+          <div class="doc-meta">Updated Feb 2025 · 210 entries</div>
+        </div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon pdf">📄</div>
+        <div>
+          <div>Nordex Group Case Study</div>
+          <div class="doc-meta">Completed Q3 2024</div>
+        </div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon word">📘</div>
+        <div>
+          <div>GDPR Compliance Playbook</div>
+          <div class="doc-meta">Updated Oct 2024 · 19 pages</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-num">47</div>
+        <div class="stat-label">Documents</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">12k</div>
+        <div class="stat-label">Passages indexed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Accuracy score</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">&lt;2s</div>
+        <div class="stat-label">Avg response</div>
+      </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Recent Questions</div>
+      <div class="doc-item" style="cursor:pointer" onclick="sendQuestion('How do we handle GDPR compliance for EU clients?')">
+        <div style="font-size:16px">💬</div>
+        <div style="font-size:12px; color:var(--muted)">GDPR compliance for EU clients</div>
+      </div>
+      <div class="doc-item" style="cursor:pointer" onclick="sendQuestion('What is our standard SLA for Tier 1 incidents?')">
+        <div style="font-size:16px">💬</div>
+        <div style="font-size:12px; color:var(--muted)">SLA for Tier 1 incidents</div>
+      </div>
+      <div class="doc-item" style="cursor:pointer" onclick="sendQuestion('Who has experience with Azure cloud migrations?')">
+        <div style="font-size:16px">💬</div>
+        <div style="font-size:12px; color:var(--muted)">Azure cloud migration expertise</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CHAT -->
+  <main>
+    <div class="chat-header">
+      <div>
+        <div class="chat-title">🤖 CBC Knowledge Assistant</div>
+        <div class="chat-subtitle">Ask anything about our processes, projects, clients, or team expertise</div>
+      </div>
+      <div class="model-badge">✦ Powered by Claude AI</div>
+    </div>
+
+    <div class="messages" id="messages">
+      <!-- Welcome screen -->
+      <div class="welcome" id="welcome">
+        <div class="welcome-icon">🧠</div>
+        <h2>Welcome to CBC EMEA Knowledge Assistant</h2>
+        <p>Instantly search across all internal documents, past projects, SOPs, and team expertise. No more digging through folders or waiting for a colleague to reply.</p>
+        <div class="suggestions">
+          <button class="suggestion-btn" onclick="sendQuestion('What is the standard process for onboarding a new client at CBC EMEA?')">
+            <span class="s-icon">📋</span>
+            What is our client onboarding process?
+          </button>
+          <button class="suggestion-btn" onclick="sendQuestion('Who at CBC EMEA has experience with cyber security?')">
+            <span class="s-icon">👥</span>
+            Who has cyber security expertise?
+          </button>
+          <button class="suggestion-btn" onclick="sendQuestion('How did CBC EMEA handle the Nordex infrastructure migration project?')">
+            <span class="s-icon">🏗️</span>
+            Tell me about the Nordex project
+          </button>
+          <button class="suggestion-btn" onclick="sendQuestion('What are the key steps in our project delivery framework?')">
+            <span class="s-icon">🚀</span>
+            How does our delivery framework work?
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <div class="input-wrap">
+        <textarea id="input" rows="1" placeholder="Ask about projects, processes, clients, expertise…"
+          onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+        <button class="send-btn" id="sendBtn" onclick="sendFromInput()">➤</button>
+      </div>
+      <div class="input-hint">Press Enter to send &nbsp;·&nbsp; Shift+Enter for new line &nbsp;·&nbsp; Answers include document sources</div>
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
