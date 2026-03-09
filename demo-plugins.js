@@ -71,7 +71,17 @@ let connectedSources = {
 // Toggle authentication panel
 function toggleAuthPanel() {
   const panel = document.getElementById('authContainer');
+  const overlay = document.getElementById('authOverlay');
+  
   panel.classList.toggle('open');
+  overlay.classList.toggle('open');
+  
+  // Prevent body scroll when panel is open
+  if (panel.classList.contains('open')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 }
 
 // Connect demo sources

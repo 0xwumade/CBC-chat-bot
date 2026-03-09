@@ -176,10 +176,16 @@
   </main>
 </div>
 
+<!-- Authentication Panel Overlay -->
+<div class="auth-overlay" id="authOverlay" onclick="toggleAuthPanel()"></div>
+
 <!-- Authentication Panel -->
 <div class="auth-container" id="authContainer">
   <div class="auth-panel">
-    <h3>Connect Data Sources</h3>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 style="margin: 0;">Connect Data Sources</h3>
+      <button onclick="toggleAuthPanel()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: var(--muted);">×</button>
+    </div>
     <p>Connect your accounts to get real-time information</p>
     
     <div class="connected-sources" id="connectedSources"></div>

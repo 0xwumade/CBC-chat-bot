@@ -1,16 +1,36 @@
 /* Plugin Integration Styles */
 
+/* Authentication Panel Overlay */
+.auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+.auth-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Authentication Panel */
 .auth-container {
   position: fixed;
   top: 0;
-  right: -350px;
-  width: 350px;
+  right: -400px;
+  width: 400px;
   height: 100vh;
   background: var(--card);
   box-shadow: -2px 0 10px rgba(0,0,0,0.1);
   transition: right 0.3s ease;
   z-index: 1000;
+  overflow-y: auto;
 }
 
 .auth-container.open {
