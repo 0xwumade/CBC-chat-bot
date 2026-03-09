@@ -86,21 +86,66 @@ function toggleAuthPanel() {
 
 // Connect demo sources
 function connectTeamsDemo() {
-  connectedSources.teams = true;
-  updateConnectionUI('teams', 'Microsoft Teams');
-  showNotification('✅ Microsoft Teams connected (Demo Mode)');
+  if (connectedSources.teams) {
+    // Disconnect
+    connectedSources.teams = false;
+    disconnectSource('teams', 'Microsoft Teams');
+    showNotification('❌ Microsoft Teams disconnected');
+  } else {
+    // Connect
+    connectedSources.teams = true;
+    updateConnectionUI('teams', 'Microsoft Teams');
+    showNotification('✅ Microsoft Teams connected (Demo Mode)');
+  }
 }
 
 function connectGmailDemo() {
-  connectedSources.gmail = true;
-  updateConnectionUI('gmail', 'Gmail');
-  showNotification('✅ Gmail connected (Demo Mode)');
+  if (connectedSources.gmail) {
+    // Disconnect
+    connectedSources.gmail = false;
+    disconnectSource('gmail', 'Gmail');
+    showNotification('❌ Gmail disconnected');
+  } else {
+    // Connect
+    connectedSources.gmail = true;
+    updateConnectionUI('gmail', 'Gmail');
+    showNotification('✅ Gmail connected (Demo Mode)');
+  }
 }
 
 function connectSharePointDemo() {
-  connectedSources.sharepoint = true;
-  updateConnectionUI('sharepoint', 'SharePoint');
-  showNotification('✅ SharePoint connected (Demo Mode)');
+  if (connectedSources.sharepoint) {
+    // Disconnect
+    connectedSources.sharepoint = false;
+    disconnectSource('sharepoint', 'SharePoint');
+    showNotification('❌ SharePoint disconnected');
+  } else {
+    // Connect
+    connectedSources.sharepoint = true;
+    updateConnectionUI('sharepoint', 'SharePoint');
+    showNotification('✅ SharePoint connected (Demo Mode)');
+  }
+}
+
+// Disconnect a source
+function disconnectSource(source, displayName) {
+  const btn = document.getElementById(`${source}Btn`);
+  btn.classList.remove('connected');
+  
+  // Update button text based on source
+  const icons = {
+    teams: '📧',
+    gmail: '✉️',
+    sharepoint: '📁'
+  };
+  
+  btn.innerHTML = `<span>${icons[source]}</span> Connect ${displayName}`;
+  
+  // Remove badge by ID
+  const badge = document.getElementById(`badge-${source}`);
+  if (badge) {
+    badge.remove();
+  }
 }
 
 // Update UI to show connected sources
@@ -110,10 +155,24 @@ function updateConnectionUI(source, displayName) {
   btn.innerHTML = `<span>✓</span> ${displayName} Connected`;
   
   const sourcesContainer = document.getElementById('connectedSources');
-  const badge = document.createElement('div');
-  badge.className = 'source-badge';
-  badge.innerHTML = `<span>✓</span> ${displayName}`;
-  sourcesContainer.appendChild(badge);
+  
+  // Check if badge already exists
+  const existingBadges = sourcesContainer.querySelectorAll('.source-badge');
+  let badgeExists = false;
+  existingBadges.forEach(badge => {
+    if (badge.textContent.includes(displayName)) {
+      badgeExists = true;
+    }
+  });
+  
+  // Only add badge if it doesn't exist
+  if (!badgeExists) {
+    const badge = document.createElement('div');
+    badge.className = 'source-badge';
+    badge.id = `badge-${source}`;
+    badge.innerHTML = `<span>✓</span> ${displayName}`;
+    sourcesContainer.appendChild(badge);
+  }
 }
 
 // Show notification
