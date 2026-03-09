@@ -15,3 +15,12 @@ npm-debug.log*
 
 # Temporary files
 *.tmp
+
+# Configuration files with sensitive data
+config.js
+.env
+*.key
+*.pem
+
+# OAuth tokens
+tokens.json
