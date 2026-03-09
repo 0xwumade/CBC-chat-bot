@@ -72,6 +72,26 @@ header {
   gap: 18px;
 }
 
+.plugin-toggle {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s;
+}
+
+.plugin-toggle:hover {
+  background: rgba(255,255,255,.25);
+  transform: scale(1.05);
+}
+
 .status-pill {
   background: rgba(255,255,255,.15);
   border: 1px solid rgba(255,255,255,.3);

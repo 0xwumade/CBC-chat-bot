@@ -7,7 +7,8 @@ Copy
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CBC EMEA · Knowledge Assistant</title>
-  <link rel="stylesheet" href="styles.css"></head>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="plugins.css"></head>
 <body>
 
 <!-- HEADER -->
@@ -20,6 +21,9 @@ Copy
     </div>
   </div>
   <div class="header-right">
+    <button class="plugin-toggle" onclick="toggleAuthPanel()" title="Connect Data Sources">
+      🔌
+    </button>
     <div class="status-pill">
       <div class="status-dot"></div>
       AI Assistant Online
@@ -174,6 +178,41 @@ Copy
   </main>
 </div>
 
+<!-- Authentication Panel -->
+<div class="auth-container" id="authContainer">
+  <div class="auth-panel">
+    <h3>Connect Data Sources</h3>
+    <p>Connect your accounts to get real-time information</p>
+    
+    <div class="connected-sources" id="connectedSources"></div>
+    
+    <button class="auth-btn" id="teamsBtn" onclick="connectTeamsDemo()">
+      <span>📧</span> Connect Microsoft Teams
+    </button>
+    
+    <button class="auth-btn" id="gmailBtn" onclick="connectGmailDemo()">
+      <span>✉️</span> Connect Gmail
+    </button>
+    
+    <button class="auth-btn" id="sharepointBtn" onclick="connectSharePointDemo()">
+      <span>📁</span> Connect SharePoint
+    </button>
+
+    <div class="plugin-settings">
+      <h4>Settings</h4>
+      <div class="setting-item">
+        <span class="setting-label">Combine with static responses</span>
+        <div class="setting-toggle active" onclick="toggleSetting(this)"></div>
+      </div>
+      <div class="setting-item">
+        <span class="setting-label">Show source links</span>
+        <div class="setting-toggle active" onclick="toggleSetting(this)"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="script.js?v=2"></script>
+<script src="demo-plugins.js"></script>
 </body>
 </html>
